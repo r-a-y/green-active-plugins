@@ -1,21 +1,22 @@
 <?php
 /*
 Plugin Name: Green Active Plugins!
-Description: Hate the colors used on the WP 2.8 admin plugins page? Love WP 2.7's color scheme? Here's your dream plugin!
+Description: Change your WP admin active plugin's color from light gray to green!
 Author: r-a-y
-Version: 1.0
-Author URI: http://buddypress.org/developers/r-a-y/
+Version: 1.1
+Author URI: http://buddypress.org/community/members/r-a-y
 */
 
-function gap_active_plugin_colors() {
+function ray_green_active_plugins() {
 ?>
 	<style type="text/css">
 	tr.active th, tr.active td {background-color:#E7F7D3 !important;}
-	tr.inactive th, tr.inactive td {background-color:#fff !important;}
+	tr.inactive th, tr.inactive td, .plugins .inactive {background-color:#fff !important;}
 	.plugin-update-tr .update-message {text-align:center;}
 	</style>
-<?php	
+<?php
 }
 
-add_action('admin_head', 'gap_active_plugin_colors');
+add_action( 'admin_head-plugins.php', 'ray_green_active_plugins', 99 );
+
 ?>
